@@ -1,0 +1,51 @@
+/* Center the header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: white; /* Optional: Change text color for better contrast */
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: Make it bold */
+    
+}
+
+header1 {
+    text-align: left;
+    padding: 5px 0;
+    color: rgb(0, 0, 0); /* Optional: Change text color for better contrast */
+    font-size: 1rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: Make it bold */
+    
+}
+
+/* Main container to space things out */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between rows */
+    padding: 20px;
+}
+
+/* Each row in the grid */
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 6 items per row */
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 2px solid black; /* Only top border for separation */
+}
+
+/* Make the last row have only 3 items */
+.grid-row:last-child {
+    grid-template-columns: repeat(3, 1fr); /* Last row = 3 items */
+}
+
+
+/* Individual grid items */
+.grid-item {
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+}
