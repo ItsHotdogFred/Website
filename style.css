@@ -1,21 +1,90 @@
 /* Center the header */
-header {
-    text-align: center;
-    padding: 20px 0;
-    background: linear-gradient(to right, #3498db, #2ecc71);
-    color: white; /* Optional: Change text color for better contrast */
-    font-size: 3rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: Make it bold */
-    
+
+:root{
+    --base-color: white;
+    --base-variant: white;
+    --text-color: rgb(0, 0, 0);
+    --secondary-text: white;
+    --primary-color: rgb(0, 0, 0);
+    --accent-color: rgb(0, 0, 0);
+}
+.darkmode{
+    --base-color: rgb(18, 19, 20);
+    --base-variant: black;
+    --text-color: rgb(255, 255, 255);
+    --secondary-text: black;
+    --primary-color: rgb(255, 255, 255);
+    --accent-color: rgb(177, 177, 177); 
 }
 
-header1 {
-    text-align: left;
-    padding: 5px 0;
-    color: rgb(0, 0, 0); /* Optional: Change text color for better contrast */
-    font-size: 1rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: Make it bold */
-    
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg{
+    fill: var(--primary-color);
+}
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+
+
+body {
+    background-color: var(--base-color);
+}
+
+
+header {
+    text-align: center;
+    padding: 40px 0; /* Reduce padding to bring it closer to the top */
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: var(--text-color);
+    font-size: 6rem;
+    font-weight: bold;
+    margin-top: 0; /* Ensure no extra space above */
+}
+
+header h1 {
+    margin: 0; /* Remove any default margin */
+}
+
+.subheader {
+    font-size: 4rem;
+    font-weight: normal;
+    color: white;
+    margin-top: 0; /* Remove extra space */
+    text-align: center;
+    opacity: 1;
+    color: var(--text-color);
+}
+
+
+
+.section-header {
+    margin: 10px 0; /* Reduce space above and below */
+    padding: 0; /* Remove extra padding */
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 /* Main container to space things out */
@@ -24,28 +93,42 @@ main {
     flex-direction: column;
     gap: 20px; /* Space between rows */
     padding: 20px;
+    color: var(--text-color);
 }
 
-/* Each row in the grid */
-.grid-row {
+.grid-section {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Default: 6 items per row */
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Dynamically adjust columns */
     gap: 20px;
-    padding: 20px 0;
-    border-top: 2px solid black; /* Only top border for separation */
-}
 
-/* Make the last row have only 3 items */
-.grid-row:last-child {
-    grid-template-columns: repeat(3, 1fr); /* Last row = 3 items */
 }
 
 
 /* Individual grid items */
-.grid-item {
+.grid-box {
     background-color: lightgray;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
     aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
 }
+
+.grid-text {
+    font-size: 2rem;
+    text-align: left;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+}
+
+.grid-title {
+    font-size: 3rem;
+    text-align: left;
+}
+
+
+.text-box{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+
+
