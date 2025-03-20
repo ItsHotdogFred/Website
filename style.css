@@ -1,20 +1,36 @@
 /* Center the header */
 
+@font-face {
+    font-family: 'TRIAL Phantom Sans 0.8';
+    src: url('TRIALPhantomSans08-Bold.woff2') format('woff2'),
+        url('TRIALPhantomSans08-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
 :root{
     --base-color: white;
     --base-variant: white;
     --text-color: rgb(0, 0, 0);
     --secondary-text: white;
     --primary-color: rgb(0, 0, 0);
-    --accent-color: rgb(0, 0, 0);
+    --accent-color: rgb(228, 228, 228);
+    --gradient: linear-gradient(to right, #3498db, #2ecc71);
 }
 .darkmode{
-    --base-color: rgb(18, 19, 20);
+    --base-color: #17171d;
     --base-variant: black;
     --text-color: rgb(255, 255, 255);
     --secondary-text: black;
     --primary-color: rgb(255, 255, 255);
-    --accent-color: rgb(177, 177, 177); 
+    --accent-color: #252429; 
+    --gradient: linear-gradient(to right, #3498db, #2ecc71);
 }
 
 #theme-switch{
@@ -48,14 +64,14 @@
 
 body {
     background-color: var(--base-color);
+    font-family: 'Phantom Sans', sans-serif !important;
 }
 
 
 header {
     text-align: center;
     padding: 40px 0; /* Reduce padding to bring it closer to the top */
-    background: linear-gradient(to right, #3498db, #2ecc71);
-    color: var(--text-color);
+    background: var(--accent-color);
     font-size: 6rem;
     font-weight: bold;
     margin-top: 0; /* Ensure no extra space above */
@@ -63,6 +79,9 @@ header {
 
 header h1 {
     margin: 0; /* Remove any default margin */
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .subheader {
@@ -72,10 +91,60 @@ header h1 {
     margin-top: 0; /* Remove extra space */
     text-align: center;
     opacity: 1;
-    color: var(--text-color);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
 }
 
 
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: var(--gradient);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.icon {
+    fill: var(--text-color); /* Default color with customizability */
+    height: 24px; /* Adjusted for alignment */
+    width: 24px;
+    transform: translateY(4px); /* Moves the icon slightly downward */
+  }
+
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: var(--base-color);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
 
 .section-header {
     margin: 10px 0; /* Reduce space above and below */
@@ -106,12 +175,14 @@ main {
 
 /* Individual grid items */
 .grid-box {
-    background-color: lightgray;
+    background: url("your-image.jpg") center/cover no-repeat;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    color: white; /* Ensure text is readable */
 }
+
 
 .grid-text {
     font-size: 2rem;
@@ -122,6 +193,8 @@ main {
 .grid-title {
     font-size: 3rem;
     text-align: left;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 
@@ -132,3 +205,9 @@ main {
 
 
 
+.pixel-art {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated; /* Ensures crisp scaling */
+    border-radius: 10px;
+}
